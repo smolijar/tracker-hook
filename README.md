@@ -10,8 +10,14 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/contains-cat-gifs.svg)](https://cataas.com/)
 
+
 Add issue tracker references to your commits automatically!
 </div>
+
+## Demo
+
+![](https://i.imgur.com/L4BasUu.gif)
+
 
 
 ## Install
