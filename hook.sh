@@ -1,7 +1,16 @@
 #!/bin/sh
-# prepare-commit-msg git hook
-
-# TODO DESCRIPTION
+# tracker-hook
+#
+# Tries to detect current feature's tracker reference from the current Git branch.
+# If succesfull, prepares the reference in the commit message's trailers.
+#
+# Intended `prepare-commit-msg` git hook
+#
+# https://github.com/grissius/tracker-hook
+# version: 0.1.0
+# author: Jaroslav Šmolík
+# license: MIT
+#
 
 # Get current branch
 current_branch() { git rev-parse --abbrev-ref HEAD; }
