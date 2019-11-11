@@ -19,7 +19,8 @@ get_issue() { current_branch | parse_issue; }
 
 hook() {
     COMMIT_MSG_FILE=$1
-    git interpret-trailers --trailer "Related: #$(get_issue)" --in-place $COMMIT_MSG_FILE
+    ISSUE="$(get_issue)"
+    [[ $ISSUE ]] && git interpret-trailers --trailer "Related: #$ISSUE" --in-place $COMMIT_MSG_FILE
     exit 0
 }
 
