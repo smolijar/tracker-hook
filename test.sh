@@ -1,22 +1,28 @@
 #!/bin/sh
 . ./hook.sh --source-only
 
-test_without_prefix() {
-    assertEquals $(echo "foo/bar/baz" | without_prefix) baz
-}
-
-test_parse_issue() {
-    assertEquals $(echo "issue-a-b-c" | parse_issue) issue
-}
-
 to_issue() {
-    echo $1 | without_prefix | parse_issue
+    echo $1 | parse_issue
 }
 
-test_1() {
-    assertEquals $(to_issue "feat/123-add-foo") 123
-    assertEquals $(to_issue "backup/fix/6666-fix-foo") 6666
-    assertEquals $(to_issue "123-ein-zwo") 123
+test_numeral() {
+    assertEquals 123 $(to_issue "feat/123-add-foo")
+    assertEquals 6666 $(to_issue "backup/fix/6666-fix-foo")
+    assertEquals 123 $(to_issue "123-ein-zwo")
+    assertEquals 456 $(to_issue "fix/456-add-2-functions")
+}
+
+test_github() {
+    assertEquals GH-2 $(to_issue "GH-2")
+}
+
+test_hash() {
+    assertEquals 42 $(to_issue "jm/#42")
+}
+
+test_no_match() {
+    assertEquals NULL $(to_issue "master" || echo NULL)
+    assertEquals NULL $(to_issue "feature/foobar-baz" || echo NULL)
 }
 
 . ./shunit2

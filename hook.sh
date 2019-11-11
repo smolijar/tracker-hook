@@ -5,13 +5,17 @@
 
 # Get current branch
 current_branch() { git rev-parse --abbrev-ref HEAD; }
-# Remove "folder" prefixes
-without_prefix() { while read x; do echo "${x##*/}"; done; }
-# Parse issue number from branch name without prefixes
-parse_issue() { while read x; do echo "${x/%-*/}"; done; }
+
+# Parse issue number from branch name
+parse_issue() {
+    while read x; do
+        NUMERAL=$(echo $x | grep -o -E '(GH-)?[0-9]+' | head -1)
+        [[ $NUMERAL ]] && echo "$NUMERAL" && return
+    done
+}
 
 # Get issue from current branch
-get_issue() { current_branch | without_prefix | parse_issue; }
+get_issue() { current_branch | parse_issue; }
 
 hook() {
     COMMIT_MSG_FILE=$1
