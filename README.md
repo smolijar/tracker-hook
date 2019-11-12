@@ -18,7 +18,7 @@ Add issue tracker references to your commits automatically!
 
 A `prepare-commit-msg` Git hook to automatically add issue reference to commits, if referenced in branch.
 Tries to detect current feature's tracker reference from the current Git branch.
-If succesfull, prepares the reference in the commit message's trailers.
+If successful, prepares the reference in the commit message's trailers.
 
 ![](https://i.imgur.com/L4BasUu.gif)
 
