@@ -29,7 +29,7 @@ If successful, prepares the reference in the commit message's trailers.
 curl -L https://raw.githubusercontent.com/grissius/tracker-hook/master/scripts/install.sh | bash
 ```
 
-Alternatively (1) download [hook](https://raw.githubusercontent.com/grissius/tracker-hook/master/hook.sh) manually and save it as `.git/hooks/prepare-commit-msg` of selected repository and (2) make it executable.
+Alternatively (1) download [hook](https://raw.githubusercontent.com/grissius/tracker-hook/master/lib/hook.sh) manually and save it as `.git/hooks/prepare-commit-msg` of selected repository and (2) make it executable.
 
 ## How to use
 

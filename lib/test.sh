@@ -1,5 +1,5 @@
 #!/bin/sh
-. ./hook.sh --source-only
+. ./lib/hook.sh --source-only
 
 # Helper parser
 to_issue() { echo $1 | parse_issue || echo NULL; }
