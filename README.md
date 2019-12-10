@@ -63,7 +63,7 @@ Try to work on a dynamic project that drags on for months and years and is contr
 **What are git trailers and why use it for references?**
 Git [trailers](https://git-scm.com/docs/git-interpret-trailers) are key-value metadata serialized in Git text message. It is parsable, standardized and perfect place for machine managed information, like generated issue tracker reference.
 
-**Why do you use key `References`?**
+**Why do you use key `Related`?**
 I tried to follow [existing conventions](https://git.wiki.kernel.org/index.php/CommitMessageConventions), and came up with `Bug`, `Closes`, `Closes-Bug`, `Partial-Bug` or `Related-Bug`. Because it is applied automatically, I wanted to go as general as possible. Since only few commits will actually resolve the issue, the best match is `Related-Bug`, but since not all _issues_ are _bugs_, I decided to drop the `bug` and tada!
 
 ## License
