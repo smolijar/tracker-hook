@@ -66,6 +66,29 @@ Git [trailers](https://git-scm.com/docs/git-interpret-trailers) are key-value me
 **Why do you use key `Related`?**
 I tried to follow [existing conventions](https://git.wiki.kernel.org/index.php/CommitMessageConventions), and came up with `Bug`, `Closes`, `Closes-Bug`, `Partial-Bug` or `Related-Bug`. Because it is applied automatically, I wanted to go as general as possible. Since only few commits will actually resolve the issue, the best match is `Related-Bug`, but since not all _issues_ are _bugs_, I decided to drop the `bug` and tada!
 
+**How can I reference two issues? Should I use `Related: #1, #2`?**
+No, prefer duplicate-key records. Here is an example from [git-interpret-trailers docs](https://git-scm.com/docs/git-interpret-trailers#_examples).
+```
+subject
+
+message
+
+Signed-off-by: Alice <alice@example.com>
+Signed-off-by: Bob <bob@example.com>
+```
+
+`git-interpret-trailers` can handle duplicates and parses all values, it also introduces duplicate keys when writing different pairs with same key. And you don't have to worry about parsing the delimiters yourself.
+
+```bash
+# Bad
+Related: #1, #2
+```
+```bash
+# Good
+Related: #1
+Related: #2
+```
+
 ## License
 
 This project is licensed under [MIT](./LICENSE).
