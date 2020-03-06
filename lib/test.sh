@@ -1,34 +1,32 @@
 #!/bin/sh
-. ./lib/hook.sh --source-only
 
-# Helper parser
-to_issue() { echo $1 | parse_issue || echo NULL; }
+. ./lib/hook.sh --source-only
 
 # Parsing tests
 test_numeral() {
-    assertEquals 123 $(to_issue "feat/123-add-foo")
-    assertEquals 6666 $(to_issue "backup/fix/6666-fix-foo")
-    assertEquals 123 $(to_issue "123-ein-zwo")
-    assertEquals 456 $(to_issue "fix/456-add-2-functions")
-    assertEquals 550 $(to_issue "feat/550-add-missing-id")
-    assertEquals 42 $(to_issue "42")
-    assertEquals 666 $(to_issue "backup/fix/666-root-of-all-evol")
+    assertEquals 123 "$(parse_issue "feat/123-add-foo")"
+    assertEquals 6666 "$(parse_issue "backup/fix/6666-fix-foo")"
+    assertEquals 123 "$(parse_issue "123-ein-zwo")"
+    assertEquals 456 "$(parse_issue "fix/456-add-2-functions")"
+    assertEquals 550 "$(parse_issue "feat/550-add-missing-id")"
+    assertEquals 42 "$(parse_issue "42")"
+    assertEquals 666 "$(parse_issue "backup/fix/666-root-of-all-evol")"
 }
 
 test_github() {
-    assertEquals GH-2 $(to_issue "GH-2")
-    assertEquals GH-456 $(to_issue "folder/#GH-456")
+    assertEquals GH-2 "$(parse_issue "GH-2")"
+    assertEquals GH-456 "$(parse_issue "folder/#GH-456")"
 }
 
 test_hash() {
-    assertEquals 42 $(to_issue "jm/#42")
-    assertEquals 21 $(to_issue "tracker:#21")
+    assertEquals 42 "$(parse_issue "jm/#42")"
+    assertEquals 21 "$(parse_issue "tracker:#21")"
 }
 
 test_no_match() {
-    assertEquals NULL $(to_issue "master")
-    assertEquals NULL $(to_issue "feature/foobar-baz")
-    assertEquals NULL $(to_issue "foo/bar")
+    assertNull "$(parse_issue "master")"
+    assertNull "$(parse_issue "feature/foobar-baz")"
+    assertNull "$(parse_issue "foo/bar")"
 }
 
 # Hook tests
