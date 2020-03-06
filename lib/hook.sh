@@ -2,13 +2,14 @@
 # tracker-hook
 #
 # Tries to detect current feature's tracker reference from the current Git branch.
-# If succesfull, prepares the reference in the commit message's trailers.
+# If successful, prepares the reference in the commit message's trailers.
 #
 # Intended `prepare-commit-msg` git hook
 #
 # https://github.com/grissius/tracker-hook
 # version: 0.1.0
 # author: Jaroslav Šmolík
+# contributors: Sandra Tatarevićová
 # license: MIT
 #
 
