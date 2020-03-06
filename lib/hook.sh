@@ -7,7 +7,7 @@
 # Intended `prepare-commit-msg` git hook
 #
 # https://github.com/grissius/tracker-hook
-# version: 0.1.0
+# version: 0.1.1
 # author: Jaroslav Šmolík
 # contributors: Sandra Tatarevićová
 # license: MIT
