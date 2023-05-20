@@ -4,3 +4,5 @@ test: shunit2
 	bash ./lib/test.sh
 clean:
 	rm -rf shunit2
+gif:
+	vhs examples/demo.tape
