@@ -38,22 +38,26 @@ If no issue is parsed, hook will perform no action and you won't even know its t
 
 See the following examples:
 
-| Branch name                       | Extracted id |
-| --------------------------------- | ------------ |
-| `feat/123-add-foo`                | `#123`       |
-| `backup/fix/6666-fix-foo`         | `#6666`      |
-| `123-ein-zwo`                     | `#123`       |
-| `fix/456-add-2-functions`         | `#456`       |
-| `feat/550-add-missing-id`         | `#550`       |
-| `42`                              | `#42`        |
-| `backup/fix/666-root-of-all-evol` | `#666`       |
-| `GH-2`                            | `#GH-2`      |
-| `folder/#GH-456`                  | `#GH-456`    |
-| `jm/#42`                          | `#42`        |
-| `tracker:#21`                     | `#21`        |
-| `master`                          | -            |
-| `feature/foobar-baz`              | -            |
-| `foo/bar`                         | -            |
+| Branch name                       | Extracted id        |
+| --------------------------------- | ------------------- |
+| `feat/123-add-foo`                | `#123`              |
+| `backup/fix/6666-fix-foo`         | `#6666`             |
+| `123-ein-zwo`                     | `#123`              |
+| `fix/456-add-2-functions`         | `#456`              |
+| `feat/550-add-missing-id`         | `#550`              |
+| `42`                              | `#42`               |
+| `backup/fix/666-root-of-all-evol` | `#666`              |
+| `GH-2`                            | `#GH-2`             |
+| `folder/#GH-456`                  | `#GH-456`           |
+| `jm/#42`                          | `#42`               |
+| `tracker:#21`                     | `#21`               |
+| `X-88/feat`                       | `#X-88`             |
+| `feat/ABCDEFGHIJKL-999`           | `#ABCDEFGHIJKL-999` |
+| `ABC-1`                           | `#ABC-1`            |
+| `FOO_2-1-feat`                    | `#FOO_2-1`          |
+| `master`                          | -                   |
+| `feature/foobar-baz`              | -                   |
+| `foo/bar`                         | -                   |
 
 ## Q&A
 

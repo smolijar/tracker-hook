@@ -21,7 +21,7 @@ current_branch() {
 # Parse issue number from branch name
 parse_issue() {
     local branch_name=$1
-    echo "$branch_name" | grep -o -E '(GH-)?[0-9]+' | head -1
+    echo "$branch_name" | grep -o -E '([A-Z][A-Z0-9_]*-)?[0-9]+' | head -1
 }
 
 # Get issue from current branch

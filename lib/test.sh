@@ -18,6 +18,13 @@ test_github() {
     assertEquals GH-456 "$(parse_issue "folder/#GH-456")"
 }
 
+test_jira() {
+    assertEquals X-88 "$(parse_issue "X-88/feat")"
+    assertEquals ABCDEFGHIJKL-999 "$(parse_issue "feat/ABCDEFGHIJKL-999")"
+    assertEquals ABC-1 "$(parse_issue "ABC-1")"
+    assertEquals FOO_2-1 "$(parse_issue "FOO_2-1-feat")"
+}
+
 test_hash() {
     assertEquals 42 "$(parse_issue "jm/#42")"
     assertEquals 21 "$(parse_issue "tracker:#21")"
